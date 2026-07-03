@@ -48,19 +48,19 @@ export default async function HomePage() {
 
       <section
         id="team"
-        className="mx-auto max-w-2xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="mx-auto max-w-2xl rounded-xl border border-pink-200 bg-pink-50 p-6 shadow-sm"
       >
         <h2 className="mb-4 text-lg font-semibold">Team Members</h2>
         {members.length === 0 ? (
           <p className="text-slate-500">
             No team members yet. Create one via{" "}
-            <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm">
+            <code className="rounded bg-pink-100 px-1.5 py-0.5 text-sm">
               POST /api/team-members
             </code>
             .
           </p>
         ) : (
-          <ul className="divide-y divide-slate-100">
+          <ul className="divide-y divide-pink-100">
             {members.map((m) => (
               <li key={m.id} className="flex items-center justify-between py-3">
                 <div>
@@ -76,7 +76,7 @@ export default async function HomePage() {
         )}
       </section>
 
-      <p className="mt-8 text-center text-sm text-slate-400">
+      <p className="mt-8 text-center text-sm text-slate-500">
         Data flows: page → interfaces → application → domain
       </p>
     </BaseLayout>

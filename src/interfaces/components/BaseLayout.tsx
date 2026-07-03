@@ -20,7 +20,7 @@ export function BaseLayout({ header, footer, children }: BaseLayoutProps) {
   return (
     <div className="flex min-h-screen flex-col">
       {header ? (
-        <header className="border-b border-slate-200 bg-white">
+        <header className="border-b border-pink-200 bg-pink-50">
           <div className="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
             {header}
           </div>
@@ -34,7 +34,7 @@ export function BaseLayout({ header, footer, children }: BaseLayoutProps) {
       </main>
 
       {footer ? (
-        <footer className="border-t border-slate-200 bg-white">
+        <footer className="border-t border-pink-200 bg-pink-50">
           <div className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
             {footer}
           </div>

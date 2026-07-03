@@ -29,7 +29,7 @@ export function Features() {
         {features.map((feature) => (
           <div
             key={feature.title}
-            className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+            className="rounded-xl border border-pink-200 bg-pink-50 p-6 shadow-sm"
           >
             <span className="text-3xl" aria-hidden="true">
               {feature.icon}
