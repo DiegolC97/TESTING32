@@ -2,6 +2,7 @@ import { container } from "@infrastructure/config/container";
 import { TeamMemberController } from "@interfaces/http/TeamMemberController";
 import { BaseLayout } from "@interfaces/components/BaseLayout";
 import { Footer } from "@interfaces/components/Footer";
+import { Header } from "@interfaces/components/Header";
 import { Hero } from "./components/Hero";
 import { Features } from "./components/Features";
 
@@ -29,17 +30,7 @@ export default async function HomePage() {
 
   return (
     <BaseLayout
-      header={
-        <div className="flex items-center justify-between">
-          <span className="text-lg font-bold tracking-tight text-brand">
-            TEAMTEST
-          </span>
-          {/* Placeholder: primary navigation goes here */}
-          <nav aria-label="Primary" className="text-sm text-slate-500">
-            Nav
-          </nav>
-        </div>
-      }
+      header={<Header />}
       footer={<Footer />}
     >
       <Hero />
