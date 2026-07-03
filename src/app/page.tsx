@@ -1,4 +1,5 @@
 import { BaseLayout } from "@interfaces/components/BaseLayout";
+import { Footer } from "@interfaces/components/Footer";
 
 /**
  * Landing page rendered at the root route ("/").
@@ -21,13 +22,7 @@ export default function HomePage() {
           </nav>
         </div>
       }
-      footer={
-        <div className="flex flex-col items-center justify-between gap-2 text-sm text-slate-500 sm:flex-row">
-          {/* Placeholder: footer content goes here */}
-          <span>© TEAMTEST</span>
-          <span>Built on Clean Architecture</span>
-        </div>
-      }
+      footer={<Footer />}
     >
       {/* Placeholder: main landing content (hero, features, etc.) goes here */}
       <section className="mx-auto max-w-2xl text-center">
