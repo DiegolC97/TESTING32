@@ -1,3 +1,5 @@
+import { EasterEgg } from "./EasterEgg";
+
 /**
  * Site footer: copyright text plus a few navigation links.
  *
@@ -14,7 +16,10 @@ export function Footer() {
 
   return (
     <div className="flex flex-col items-center justify-between gap-3 text-sm text-slate-500 sm:flex-row">
-      <p>© 2026 TEAMTEST. All rights reserved.</p>
+      <p className="flex items-center gap-1.5">
+        © 2026 TEAMTEST. All rights reserved.
+        <EasterEgg />
+      </p>
       <nav aria-label="Footer">
         <ul className="flex items-center gap-4">
           {links.map((link) => (
