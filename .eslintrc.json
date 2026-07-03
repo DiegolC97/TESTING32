@@ -1,16 +1,37 @@
 {
   "extends": ["next/core-web-vitals", "prettier"],
-  "rules": {
-    "no-restricted-imports": [
-      "error",
-      {
-        "patterns": [
+  "overrides": [
+    {
+      "files": ["src/domain/**/*"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
           {
-            "group": ["@application/*", "@infrastructure/*", "@interfaces/*"],
-            "message": "domain/ must not import from other layers. See CLAUDE.md."
+            "patterns": [
+              {
+                "group": ["@application/*", "@infrastructure/*", "@interfaces/*"],
+                "message": "domain/ must not import from other layers. See CLAUDE.md."
+              }
+            ]
           }
         ]
       }
-    ]
-  }
+    },
+    {
+      "files": ["src/application/**/*"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@infrastructure/*", "@interfaces/*"],
+                "message": "application/ may only import from domain/. See CLAUDE.md."
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
 }

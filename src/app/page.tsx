@@ -1,5 +1,6 @@
 import { container } from "@infrastructure/config/container";
 import { TeamMemberController } from "@interfaces/http/TeamMemberController";
+import { Hero } from "./components/Hero";
 
 /**
  * Server Component acting as an entry point. It composes the interfaces
@@ -21,17 +22,13 @@ export default async function HomePage() {
   }>;
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
-      <header className="mb-10">
-        <h1 className="text-4xl font-bold tracking-tight text-brand">
-          TEAMTEST
-        </h1>
-        <p className="mt-2 text-slate-600">
-          Next.js · TypeScript · Tailwind CSS · Clean Architecture
-        </p>
-      </header>
+    <main className="mx-auto max-w-2xl px-6 pb-16">
+      <Hero />
 
-      <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section
+        id="team"
+        className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+      >
         <h2 className="mb-4 text-lg font-semibold">Team Members</h2>
         {members.length === 0 ? (
           <p className="text-slate-500">
