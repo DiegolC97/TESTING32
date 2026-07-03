@@ -3,6 +3,7 @@ import { TeamMemberController } from "@interfaces/http/TeamMemberController";
 import { BaseLayout } from "@interfaces/components/BaseLayout";
 import { Footer } from "@interfaces/components/Footer";
 import { Hero } from "./components/Hero";
+import { Features } from "./components/Features";
 
 /**
  * Landing page rendered at the root route ("/").
@@ -42,6 +43,8 @@ export default async function HomePage() {
       footer={<Footer />}
     >
       <Hero />
+
+      <Features />
 
       <section
         id="team"
