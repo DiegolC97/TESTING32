@@ -1,11 +1,15 @@
 import { container } from "@infrastructure/config/container";
 import { TeamMemberController } from "@interfaces/http/TeamMemberController";
+import { BaseLayout } from "@interfaces/components/BaseLayout";
 import { Hero } from "./components/Hero";
 
 /**
- * Server Component acting as an entry point. It composes the interfaces
+ * Landing page rendered at the root route ("/").
+ *
+ * Server Component acting as an entry point: it composes the interfaces
  * controller with the wired use cases from the composition root, then
- * renders the result. No business logic lives here.
+ * renders the result inside the BaseLayout presentation shell (header,
+ * main, and footer slots). No business logic lives here.
  */
 export default async function HomePage() {
   const controller = new TeamMemberController(
@@ -22,12 +26,31 @@ export default async function HomePage() {
   }>;
 
   return (
-    <main className="mx-auto max-w-2xl px-6 pb-16">
+    <BaseLayout
+      header={
+        <div className="flex items-center justify-between">
+          <span className="text-lg font-bold tracking-tight text-brand">
+            TEAMTEST
+          </span>
+          {/* Placeholder: primary navigation goes here */}
+          <nav aria-label="Primary" className="text-sm text-slate-500">
+            Nav
+          </nav>
+        </div>
+      }
+      footer={
+        <div className="flex flex-col items-center justify-between gap-2 text-sm text-slate-500 sm:flex-row">
+          {/* Placeholder: footer content goes here */}
+          <span>© TEAMTEST</span>
+          <span>Built on Clean Architecture</span>
+        </div>
+      }
+    >
       <Hero />
 
       <section
         id="team"
-        className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
+        className="mx-auto max-w-2xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
       >
         <h2 className="mb-4 text-lg font-semibold">Team Members</h2>
         {members.length === 0 ? (
@@ -58,6 +81,6 @@ export default async function HomePage() {
       <p className="mt-8 text-center text-sm text-slate-400">
         Data flows: page → interfaces → application → domain
       </p>
-    </main>
+    </BaseLayout>
   );
 }
