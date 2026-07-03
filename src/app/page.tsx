@@ -1,6 +1,7 @@
 import { container } from "@infrastructure/config/container";
 import { TeamMemberController } from "@interfaces/http/TeamMemberController";
 import { BaseLayout } from "@interfaces/components/BaseLayout";
+import { Footer } from "@interfaces/components/Footer";
 import { Hero } from "./components/Hero";
 
 /**
@@ -38,13 +39,7 @@ export default async function HomePage() {
           </nav>
         </div>
       }
-      footer={
-        <div className="flex flex-col items-center justify-between gap-2 text-sm text-slate-500 sm:flex-row">
-          {/* Placeholder: footer content goes here */}
-          <span>© TEAMTEST</span>
-          <span>Built on Clean Architecture</span>
-        </div>
-      }
+      footer={<Footer />}
     >
       <Hero />
 
